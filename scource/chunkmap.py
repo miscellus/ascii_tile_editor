@@ -86,8 +86,8 @@ class Layered_Chunk_Map:
 
         return (self.active_layer_name, x, y)
 
-    def set_named_coord(self, name, layer_and_coord):
-        self.named_coords[name] = layer_and_coord
+    def set_named_coord(self, name, layer, x, y):
+        self.named_coords[name] = layer, x, y
 
     def set_tile_at_named_coord(self, coord_name, tile):
         layer, x, y = self.named_coords[coord_name]
