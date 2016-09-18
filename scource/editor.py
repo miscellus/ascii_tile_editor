@@ -30,20 +30,23 @@ world.set_tile_at_named_coord("staircase_01", Tile.empty_tile)
 
 root = Tk()
 
-root.grid()
 canvas_frame = ttk.Frame(root)
 canvas = Canvas(canvas_frame, background="gray")
-options_frame = ttk.Frame(root, borderwidth=5, relief=GROOVE)
+options_book = ttk.Notebook(root, borderwidth=5)
 
+root.grid()
 canvas_frame.grid(row=0, column=0, sticky="news")
 canvas.grid(row=0, column=0, sticky="news")
-options_frame.grid(row=0, column=1, sticky="news")
+options_book.grid(row=0, column=1, sticky="news")
 
-root.columnconfigure(0, weight=1)
+root.columnconfigure(0, weight=4)
 root.columnconfigure(1, weight=1, minsize=200)
 root.rowconfigure(0, weight=1)
 canvas_frame.columnconfigure(0, weight=1)
 canvas_frame.rowconfigure(0, weight=1)
-options_frame.rowconfigure(0, weight=1)
+options_book.rowconfigure(0, weight=1)
+
+canvas_items = []
+# canvas_items.append(canvas.create_rectangle())
 
 root.mainloop()
